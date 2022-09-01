@@ -1,13 +1,13 @@
 import pkg from 'fs-extra';
 const { mkdir, readdir, writeFile } = pkg;
 
-export const saveFile = (dest: string, base64Data: Blob) => {
+export const saveFile = (dest: string, base64Data: string) => {
     return new Promise((resolve, reject) => {
         writeFile(dest, base64Data, 'base64', (err) => (err) ? reject(err) : resolve(true))
     });
 }
 
-export const readFiles = (dirname: string) => {
+export const readFiles = (dirname: string): Promise<string[]> => {
     return new Promise((resolve, reject) => {
       readdir(dirname, (err, filenames) => (err) ? reject(err) : resolve(filenames))
     });
