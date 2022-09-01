@@ -1,7 +1,9 @@
+#!/usr/bin/env node
+
 import { Command } from 'commander'
-import { generatedImage } from './src/image';
-import logger from './src/utils/logger';
-import { generatedVideo } from "./src/video";
+import { generatedImage } from './image';
+import logger from './utils/logger';
+import { generatedVideo } from "./video";
 const program = new Command()
 
 program.name("konva-cli")
